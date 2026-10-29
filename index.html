@@ -394,13 +394,14 @@ function celebrate(){
   toast("🔔","The recruiter viewed your application","Just now",2300,3200);
   toast("📈","You appeared in 1 search","Search term: wife material",3500,3200);
   toast("🤝","Your application moved to the next round","Interview location: this bar",4700,3600);
+  toast("🦇","HR will get back to you before midnight","Status: under review",5900,3600);
 }
 function party(){
   const c = $("confetti"), ctx = c.getContext("2d");
   const dpr = window.devicePixelRatio || 1, W = innerWidth, H = innerHeight;
   c.width = W * dpr; c.height = H * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
   const colors = ["#0A66C2","#71B7FB","#057642","#F5C75D","#E06847","#C8102E","#FFFFFF"];
-  const emojis = ["💍","❤️","🥂","💼","🎉"];
+  const emojis = ["💍","❤️","🥂","💼","🎉","🎃","👻","🦇"];
   const parts = [];
   const cannon = (x, dir) => {
     for (let i = 0; i < 90; i++){
