@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Future Wife | Now Hiring</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+<style>
+:root{
+  --bg:#F4F2EE; --card:#FFFFFF; --ink:#191919; --muted:#5E5E5E; --line:#DEDCD8;
+  --blue:#0A66C2; --blue-hover:#004182; --on-blue:#FFFFFF; --blue-soft:#E8F1FB;
+  --green:#057642; --green-soft:#E6F4EC;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000; --card:#1B1F23; --ink:#E9E9E9; --muted:#A8A8A8; --line:#38434F;
+    --blue:#71B7FB; --blue-hover:#A8D4FF; --on-blue:#000000; --blue-soft:#1C2B3A;
+    --green:#5FD198; --green-soft:#16302A;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --card:#1B1F23; --ink:#E9E9E9; --muted:#A8A8A8; --line:#38434F;
+  --blue:#71B7FB; --blue-hover:#A8D4FF; --on-blue:#000000; --blue-soft:#1C2B3A;
+  --green:#5FD198; --green-soft:#16302A;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:16px; line-height:1.45; -webkit-font-smoothing:antialiased;
+}
+.topbar{
+  background:var(--card); border-bottom:1px solid var(--line);
+  padding:10px 16px; display:flex; align-items:center; gap:10px;
+}
+.in{
+  width:34px; height:34px; border-radius:4px; background:var(--blue); color:var(--on-blue);
+  display:grid; place-items:center; font-weight:800; font-size:20px; letter-spacing:-1px;
+}
+.search{
+  flex:1; background:var(--blue-soft); border-radius:4px; padding:7px 12px;
+  color:var(--muted); font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+main{max-width:520px; margin:0 auto; padding:12px 12px 40px}
+.card{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:18px 16px; margin-bottom:10px}
+.co{display:flex; align-items:center; gap:10px; margin-bottom:12px}
+.co-logo{width:48px; height:48px; border-radius:6px; background:#191919; display:grid; place-items:center; font-size:26px}
+.co-name{font-size:14px}
+.co-sub{font-size:13px; color:var(--muted)}
+h1{font-size:24px; line-height:1.2; margin:0 0 6px; font-weight:600}
+.meta{font-size:14px; color:var(--muted); margin:0 0 14px}
+.meta strong{color:var(--green); font-weight:600}
+.facts{list-style:none; padding:0; margin:0 0 16px; font-size:14px}
+.facts li{display:flex; gap:10px; padding:4px 0}
+.facts span:first-child{width:20px; text-align:center}
+.actions{display:flex; gap:8px}
+.btn{
+  appearance:none; border:0; border-radius:999px; font:inherit; font-weight:600;
+  padding:10px 20px; cursor:pointer; min-height:44px;
+}
+.btn-primary{background:var(--blue); color:var(--on-blue)}
+.btn-primary:hover{background:var(--blue-hover)}
+.btn-primary:disabled{opacity:.4; cursor:not-allowed}
+.btn-ghost{background:transparent; color:var(--blue); box-shadow:inset 0 0 0 1px var(--blue)}
+.btn:focus-visible,.opt:focus-visible,.seg button:focus-visible,input:focus-visible,.link:focus-visible{outline:3px solid var(--blue); outline-offset:2px}
+h2{font-size:18px; margin:0 0 8px; font-weight:600}
+.about p{margin:0 0 10px; font-size:15px}
+.about ul{margin:0; padding-left:20px; font-size:15px}
+.about li{margin-bottom:4px}
+
+/* apply flow */
+.apply-head{display:flex; align-items:center; justify-content:space-between; margin-bottom:6px}
+.apply-head h2{margin:0; font-size:17px}
+.back{appearance:none; border:0; background:none; color:var(--muted); font:inherit; font-size:14px; cursor:pointer; padding:6px 0}
+.progress{display:flex; align-items:center; gap:10px; margin:6px 0 18px}
+.bar{flex:1; height:8px; border-radius:99px; background:var(--line); overflow:hidden}
+.fill{height:100%; width:0; background:var(--green); border-radius:99px; transition:width .35s ease}
+.pct{font-size:13px; color:var(--muted); width:36px; text-align:right}
+.q{font-size:18px; font-weight:600; margin:0 0 4px}
+.q-hint{font-size:13px; color:var(--muted); margin:0 0 14px}
+.opts{display:grid; gap:8px}
+.opt{
+  appearance:none; text-align:left; font:inherit; font-size:15px; color:var(--ink);
+  background:var(--card); border:1px solid var(--line); border-radius:8px;
+  padding:13px 14px; cursor:pointer; display:flex; align-items:center; gap:12px; min-height:48px;
+}
+.opt::before{
+  content:""; flex:0 0 18px; height:18px; border-radius:50%; border:2px solid var(--muted);
+}
+.opt[aria-checked="true"]{border-color:var(--blue); box-shadow:inset 0 0 0 1px var(--blue)}
+.opt[aria-checked="true"]::before{border-color:var(--blue); background:radial-gradient(circle,var(--blue) 0 4px,transparent 5px)}
+.seg{display:flex; border:1px solid var(--line); border-radius:999px; padding:3px; margin-bottom:12px}
+.seg button{
+  flex:1; appearance:none; border:0; background:none; font:inherit; font-size:14px; font-weight:600;
+  color:var(--muted); padding:9px 6px; border-radius:999px; cursor:pointer; min-height:40px;
+}
+.seg button[aria-pressed="true"]{background:var(--blue); color:var(--on-blue)}
+label.field{display:block; font-size:13px; color:var(--muted); margin-bottom:6px}
+input[type=text],input[type=tel]{
+  width:100%; font:inherit; font-size:16px; color:var(--ink); background:var(--card);
+  border:1px solid var(--muted); border-radius:6px; padding:12px; margin-bottom:16px;
+}
+.foot{display:flex; flex-direction:column; gap:12px; align-items:stretch}
+.link{appearance:none; border:0; background:none; color:var(--muted); font:inherit; font-size:13px; text-decoration:underline; cursor:pointer; padding:4px}
+.done{text-align:center; padding:28px 16px}
+.check{
+  width:64px; height:64px; border-radius:50%; background:var(--green-soft); color:var(--green);
+  display:grid; place-items:center; font-size:32px; margin:0 auto 14px;
+}
+.done h2{font-size:22px}
+.done p{color:var(--muted); margin:0 0 16px}
+.status{
+  display:inline-block; background:var(--green-soft); color:var(--green);
+  font-size:13px; font-weight:600; border-radius:999px; padding:5px 12px; margin-bottom:18px;
+}
+.small{font-size:12px; color:var(--muted)}
+[hidden]{display:none !important}
+#confetti{position:fixed; inset:0; pointer-events:none; z-index:50}
+#flash{position:fixed; inset:0; background:#FFFFFF; opacity:0; pointer-events:none; z-index:40}
+#flash.go{animation:flash .5s ease-out}
+@keyframes flash{0%{opacity:.85}100%{opacity:0}}
+#stampWrap{position:fixed; inset:0; display:grid; place-items:center; pointer-events:none; z-index:60}
+.stamp{
+  font-weight:900; font-size:clamp(40px,13vw,72px); letter-spacing:2px; color:#C8102E;
+  border:7px solid #C8102E; border-radius:12px; padding:6px 18px; transform:rotate(-12deg) scale(4);
+  opacity:0; background:rgba(255,255,255,.85); text-align:center; line-height:1;
+}
+.stamp small{display:block; font-size:.28em; letter-spacing:1px; margin-top:6px}
+.stamp.go{animation:slam 2.4s cubic-bezier(.2,1.4,.4,1) forwards}
+@keyframes slam{
+  0%{opacity:0; transform:rotate(-12deg) scale(4)}
+  14%{opacity:1; transform:rotate(-12deg) scale(.92)}
+  20%{transform:rotate(-12deg) scale(1.04)}
+  26%,78%{opacity:1; transform:rotate(-12deg) scale(1)}
+  100%{opacity:0; transform:rotate(-12deg) scale(1)}
+}
+body.shake main{animation:shake .45s linear}
+@keyframes shake{
+  0%,100%{transform:translate(0,0)} 15%{transform:translate(-9px,5px)} 30%{transform:translate(8px,-6px)}
+  45%{transform:translate(-6px,-4px)} 60%{transform:translate(5px,6px)} 75%{transform:translate(-3px,2px)}
+}
+#toasts{position:fixed; left:0; right:0; top:calc(env(safe-area-inset-top,0px) + 10px); display:grid; gap:8px; justify-items:center; z-index:70; pointer-events:none; padding:0 12px}
+.toast{
+  width:100%; max-width:440px; background:var(--card); color:var(--ink); border:1px solid var(--line);
+  border-radius:10px; padding:12px 14px; display:flex; gap:12px; align-items:center; font-size:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.18); transform:translateY(-140%); opacity:0;
+  transition:transform .45s cubic-bezier(.2,1.3,.4,1), opacity .3s;
+}
+.toast.in{transform:translateY(0); opacity:1}
+.toast .ic{font-size:22px}
+.toast b{display:block}
+.toast span.sub{color:var(--muted); font-size:13px}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+</style>
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div id="flash" aria-hidden="true"></div>
+<div id="stampWrap" aria-hidden="true"><div class="stamp" id="stamp">SHORTLISTED<small>Future Wife candidate</small></div></div>
+<div id="toasts" aria-live="polite"></div>
+
+<header class="topbar">
+  <div class="in" aria-hidden="true">in</div>
+  <div class="search">Search: “future wife” in Indianapolis</div>
+</header>
+
+<main>
+  <!-- Job post -->
+  <section id="job">
+    <div class="card">
+      <div class="co">
+        <div class="co-logo" aria-hidden="true">🕴️</div>
+        <div>
+          <div class="co-name">The Guy in the Suit</div>
+          <div class="co-sub">Hiring team of one</div>
+        </div>
+      </div>
+      <h1>Future Wife</h1>
+      <p class="meta">Indianapolis, IN (On-site) · Posted tonight · <strong>Actively recruiting</strong></p>
+      <ul class="facts">
+        <li><span>💼</span><span>Full-time. Long-term. Very long-term.</span></li>
+        <li><span>🏢</span><span>1 employee (the recruiter)</span></li>
+        <li><span>💍</span><span>No experience required</span></li>
+        <li><span>✨</span><span>You’re a top applicant for this role. Probably.</span></li>
+      </ul>
+      <div class="actions">
+        <button class="btn btn-primary" id="easyApply">Easy Apply</button>
+        <button class="btn btn-ghost" id="saveBtn">Save</button>
+      </div>
+    </div>
+    <div class="card about">
+      <h2>About the job</h2>
+      <p>We’re looking for a fun, low-maintenance-ish candidate to join a fast-growing team of one. You’ll report directly to the guy wearing this sign.</p>
+      <ul>
+        <li>Laugh at the recruiter’s jokes (even the bad ones)</li>
+        <li>Collaborate cross-functionally on key events like dinner decisions</li>
+        <li>Mandatory yearly travel abroad</li>
+        <li>Open to learning about soccer and Spain</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Apply flow -->
+  <section id="apply" class="card" hidden>
+    <div class="apply-head">
+      <h2>Apply to Future Wife</h2>
+      <button class="back" id="backBtn">Back</button>
+    </div>
+    <div class="progress">
+      <div class="bar"><div class="fill" id="fill"></div></div>
+      <div class="pct" id="pct">0%</div>
+    </div>
+    <div id="step"></div>
+  </section>
+
+  <!-- Done -->
+  <section id="done" class="card done" hidden>
+    <div class="check" aria-hidden="true">✓</div>
+    <h2>Application submitted</h2>
+    <p>Our hiring team will review your candidacy and get back to you.</p>
+    <div class="status">Status: under review 👀</div>
+    <p class="small">Estimated response time: whenever he stops being nervous.</p>
+  </section>
+</main>
+
+<script>
+/* ===== CONFIG: paste from Supabase > Project Settings > API ===== */
+const SUPABASE_URL = "https://mjipygnxduimvpngarjx.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1qaXB5Z254ZHVpbXZwbmdhcmp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTMyOTk4MTksImV4cCI6MjEwODg3NTgxOX0.GgSMmrTo_Tk4b6qZGSlKgwVuSqgbcOZjjGIjFpkIous"; // "anon public" (eyJ...) or "publishable" (sb_publishable_...) key. Safe in the browser: RLS only allows inserts
+/* ================================================================= */
+
+const QUESTIONS = [
+  { id:"q1", q:"Why are you interested in this role?", hint:"Be honest. HR is watching.",
+    opts:["I’m unemployed","Saw the sign, had to","Looking for career growth","My friends dared me"] },
+  { id:"q2", q:"Preferred onboarding experience?", hint:"AKA what makes a good date.",
+    opts:["Drinks and good convo","Dinner somewhere nice","Surprise me"] },
+  { id:"q3", q:"Why should we hire you?", hint:"",
+    opts:["Elite sense of humor","Pretty privilege","Actually a good person","All of the above (strong candidate)"] }
+];
+const CONTACT = {
+  ig:{label:"Instagram", ph:"@yourhandle", type:"text", mode:"text"},
+  num:{label:"Number", ph:"(317) 555-0123", type:"tel", mode:"tel"},
+  snap:{label:"Snapchat", ph:"your snap username", type:"text", mode:"text"}
+};
+
+const answers = {};
+let stepIdx = 0;              // 0..4 questions, 5 = contact
+let method = "ig";
+const TOTAL = QUESTIONS.length + 1;
+
+const $ = id => document.getElementById(id);
+const job = $("job"), apply = $("apply"), done = $("done"), step = $("step");
+
+function show(section){
+  [job, apply, done].forEach(s => s.hidden = s !== section);
+  window.scrollTo({top:0});
+}
+function setProgress(){
+  const p = Math.round((stepIdx / TOTAL) * 100);
+  $("fill").style.width = p + "%";
+  $("pct").textContent = p + "%";
+}
+
+function renderQuestion(){
+  const Q = QUESTIONS[stepIdx];
+  step.innerHTML = "";
+  const h = document.createElement("p"); h.className = "q"; h.id = "qtitle"; h.textContent = Q.q;
+  step.appendChild(h);
+  if (Q.hint){ const s = document.createElement("p"); s.className = "q-hint"; s.textContent = Q.hint; step.appendChild(s); }
+  else { h.style.marginBottom = "14px"; }
+  const box = document.createElement("div"); box.className = "opts"; box.setAttribute("role","radiogroup"); box.setAttribute("aria-labelledby","qtitle");
+  Q.opts.forEach(o => {
+    const b = document.createElement("button");
+    b.className = "opt"; b.setAttribute("role","radio");
+    b.setAttribute("aria-checked", answers[Q.id] === o ? "true" : "false");
+    b.textContent = o;
+    b.addEventListener("click", () => {
+      answers[Q.id] = o;
+      box.querySelectorAll(".opt").forEach(x => x.setAttribute("aria-checked", x === b ? "true" : "false"));
+      setTimeout(() => { stepIdx++; render(); }, 260);
+    });
+    box.appendChild(b);
+  });
+  step.appendChild(box);
+}
+
+function renderContact(){
+  step.innerHTML = `
+    <p class="q">Next steps: where should HR contact you?</p>
+    <p class="q-hint">Pick one. We’ll get back to you. Usually.</p>
+    <div class="seg" role="group" aria-label="Contact method">
+      ${Object.entries(CONTACT).map(([k,v]) => `<button type="button" data-k="${k}" aria-pressed="${k===method}">${v.label}</button>`).join("")}
+    </div>
+    <div id="nameWrap">
+      <label class="field" for="fname">First name</label>
+      <input id="fname" type="text" autocomplete="given-name" placeholder="So he knows who you are">
+    </div>
+    <label class="field" id="handleLabel" for="handle">${CONTACT[method].label}</label>
+    <input id="handle" autocomplete="off">
+    <div class="foot">
+      <button class="btn btn-primary" id="submitBtn" disabled>Submit application</button>
+    </div>`;
+  const input = $("handle"), nameIn = $("fname"), submit = $("submitBtn");
+  const check = () => { submit.disabled = input.value.trim().length < 2 || (method === "num" && nameIn.value.trim().length < 1); };
+  const applyMethod = () => {
+    const c = CONTACT[method];
+    input.type = c.type; input.inputMode = c.mode; input.placeholder = c.ph;
+    $("handleLabel").textContent = c.label;
+    $("nameWrap").hidden = method !== "num";
+    check();
+    step.querySelectorAll(".seg button").forEach(b => b.setAttribute("aria-pressed", b.dataset.k === method));
+  };
+  step.querySelectorAll(".seg button").forEach(b => b.addEventListener("click", () => { method = b.dataset.k; applyMethod(); input.focus(); }));
+  input.addEventListener("input", check);
+  nameIn.addEventListener("input", check);
+  input.addEventListener("keydown", e => { if (e.key === "Enter" && !submit.disabled) submit.click(); });
+  applyMethod();
+  submit.addEventListener("click", () => finish(CONTACT[method].label, input.value.trim(), method === "num" ? nameIn.value.trim() : ""));
+}
+
+function render(){
+  setProgress();
+  if (stepIdx < QUESTIONS.length) renderQuestion(); else renderContact();
+}
+
+async function send(methodLabel, handle, name){
+  const row = {
+    interest: answers.q1 || null,
+    date_pref: answers.q2 || null,
+    why_hire: answers.q3 || null,
+    contact_method: methodLabel,
+    contact: handle,
+    first_name: name || null
+  };
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) { console.log("Demo mode, not sent:", row); return; }
+  for (let attempt = 0; attempt < 2; attempt++){
+    try {
+      const res = await fetch(SUPABASE_URL + "/rest/v1/applications", {
+        method: "POST",
+        headers: Object.assign({
+          "apikey": SUPABASE_ANON_KEY,
+          "Content-Type": "application/json",
+          "Prefer": "return=minimal"
+        }, SUPABASE_ANON_KEY.startsWith("eyJ") ? { "Authorization": "Bearer " + SUPABASE_ANON_KEY } : {}),
+        body: JSON.stringify(row),
+        keepalive: true
+      });
+      if (res.ok) return;
+      console.error("Insert failed", res.status, await res.text());
+    } catch (err) { console.error("Insert error", err); }
+    await new Promise(r => setTimeout(r, 800));
+  }
+}
+
+function finish(methodLabel, handle, name){
+  send(methodLabel, handle, name);
+  stepIdx = TOTAL; setProgress();
+  show(done);
+  celebrate();
+}
+
+/* celebration: flash, stamp slam, shake, confetti cannons, emoji rain, notifications */
+function toast(icon, title, sub, delay, life){
+  setTimeout(() => {
+    const t = document.createElement("div"); t.className = "toast";
+    t.innerHTML = `<div class="ic">${icon}</div><div><b></b><span class="sub"></span></div>`;
+    t.querySelector("b").textContent = title; t.querySelector(".sub").textContent = sub;
+    $("toasts").appendChild(t);
+    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add("in")));
+    setTimeout(() => { t.classList.remove("in"); setTimeout(() => t.remove(), 500); }, life);
+  }, delay);
+}
+function celebrate(){
+  const buzz = p => { if (navigator.vibrate) { try { navigator.vibrate(p); } catch(_){} } };
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced){
+    toast("🔔","The recruiter viewed your application","Just now",200,4000);
+    return;
+  }
+  // 1. flash + stamp slam + shake
+  $("flash").classList.remove("go"); void $("flash").offsetWidth; $("flash").classList.add("go");
+  $("stamp").classList.remove("go"); void $("stamp").offsetWidth; $("stamp").classList.add("go");
+  setTimeout(() => { buzz([120]); document.body.classList.add("shake"); setTimeout(() => document.body.classList.remove("shake"), 500); }, 300);
+  // 2. confetti cannons + emoji rain
+  setTimeout(() => { buzz([60,50,60,50,60,50,250]); party(); }, 450);
+  // 3. LinkedIn-style notifications
+  toast("🔔","The recruiter viewed your application","Just now",2300,3200);
+  toast("📈","You appeared in 1 search","Search term: wife material",3500,3200);
+  toast("🤝","Your application moved to the next round","Interview location: this bar",4700,3600);
+}
+function party(){
+  const c = $("confetti"), ctx = c.getContext("2d");
+  const dpr = window.devicePixelRatio || 1, W = innerWidth, H = innerHeight;
+  c.width = W * dpr; c.height = H * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  const colors = ["#0A66C2","#71B7FB","#057642","#F5C75D","#E06847","#C8102E","#FFFFFF"];
+  const emojis = ["💍","❤️","🥂","💼","🎉"];
+  const parts = [];
+  const cannon = (x, dir) => {
+    for (let i = 0; i < 90; i++){
+      const a = (-Math.PI/2) + dir*(0.25 + Math.random()*0.5), sp = 14 + Math.random()*12;
+      parts.push({x, y:H+10, vx:Math.cos(a)*sp, vy:Math.sin(a)*sp, w:6+Math.random()*6, h:8+Math.random()*9,
+        r:Math.random()*6, vr:(Math.random()-.5)*.35, col:colors[(Math.random()*colors.length)|0]});
+    }
+  };
+  cannon(0, 1); cannon(W, -1);
+  for (let i = 0; i < 28; i++){
+    parts.push({x:Math.random()*W, y:-40 - Math.random()*H*0.8, vx:(Math.random()-.5)*1.5, vy:2+Math.random()*2,
+      r:(Math.random()-.5), vr:(Math.random()-.5)*.05, emoji:emojis[(Math.random()*emojis.length)|0], size:24+Math.random()*18, float:true});
+  }
+  const start = performance.now();
+  (function frame(t){
+    ctx.clearRect(0,0,W,H);
+    for (const p of parts){
+      if (p.float){ p.vy = Math.min(p.vy + 0.04, 4.5); }
+      else { p.vy += 0.38; p.vx *= 0.985; }
+      p.x += p.vx; p.y += p.vy; p.r += p.vr;
+      ctx.save(); ctx.translate(p.x,p.y); ctx.rotate(p.r);
+      if (p.emoji){ ctx.font = p.size + "px serif"; ctx.textAlign = "center"; ctx.fillText(p.emoji,0,0); }
+      else { ctx.fillStyle = p.col; ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h); }
+      ctx.restore();
+    }
+    if (t - start < 6000) requestAnimationFrame(frame); else ctx.clearRect(0,0,W,H);
+  })(start);
+}
+
+$("easyApply").addEventListener("click", () => { stepIdx = 0; show(apply); render(); });
+$("saveBtn").addEventListener("click", e => { e.currentTarget.textContent = "Saved. Bold move."; });
+$("backBtn").addEventListener("click", () => {
+  if (stepIdx === 0) show(job); else { stepIdx--; render(); }
+});
+</script>
+</body>
+</html>
